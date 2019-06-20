@@ -39,18 +39,52 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         CardView cardView = findViewById(R.id.research_card);
         cardView.setOnClickListener(this);
+        cardView = findViewById(R.id.ex_card);
+        cardView.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         int id=v.getId();
+        Intent intent = null;
         switch (id){
-            case R.id.ex_card:break;
+            case R.id.ex_card:
+                intent = new Intent(MainActivity.this, ArCameraActivity.class);
+                startActivity(intent);
+                break;
             case R.id.research_card:
-                Intent intent = new Intent(MainActivity.this, ResearchActivity.class);
+                 intent = new Intent(MainActivity.this, ResearchActivity.class);
                 startActivity(intent);
                 break;
             case R.id.setting_card:break;
+        }
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        //Operations to apply for Camera privileges
+        
+        try {
+            session = new Session(/* context= */ this);
+            session.resume();
+        } catch (CameraNotAvailableException e) {
+            // In some cases, Camera is being used by other App s. In this case, Camera Not Available exception may be reported
+            session = null;
+            return;
+        }
+
+        surfaceView.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        if (session != null) {
+            // Note: The order can't be changed! GLSurfaceView must be suspended first, otherwise GLSurfaceView will continue to call Session's update method.
+            // However, Session is in a pause state, so the Session PausedException exception is reported.
+            surfaceView.onPause();
+            session.pause();
         }
     }
 }
