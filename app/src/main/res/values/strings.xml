@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">ExToHeal</string>
+    <string name="ex_title">"Виконання вправ"</string>
+    <string name="ex_describe">"Виконуйте вправи та слідкуте за прогресом з вашого курса"</string>
+
+
+    <string name="research_title">"Встановлення діагнозу"</string>
+    <string name="research_describe">"Визначіть ваш діагноз за допомогою систем штучного інтелекту або укажіть відому проблему"</string>
+
+    <string name="setting_title">"Налаштування"</string>
+    <string name="setting_describe">"Оберіть якість розпізновання, або обнуліть свій прогрес"</string>
+
+
+
+    <string name="base_res_title">"Встановити діагноз"</string>
+    <string name="base_res_describe">"Підберіть вправи за своїми скаргами, визначте діагноз та отримайте готову програму тренувань спеціально для вас"</string>
+
+
+    <string name="quick_res_title">"Обрати курс за діагнозом"</string>
+    <string name="quick_res_describe">"Оберіть готовий курс, якщо ваш діагноз вже відомий"</string>
+
+    <string name="overview_title">"Переглянути вправи"</string>
+    <string name="overview_describe">"Ознайомтесь з усіма доступними вправами додатку"</string>
+
+
+
+    <string name="end">Завершити</string>
+    <string name="next">Далі</string>
+
+</resources>
