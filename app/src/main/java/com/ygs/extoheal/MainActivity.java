@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onResume();
 
         //Operations to apply for Camera privileges
-        
+
         try {
             session = new Session(/* context= */ this);
             session.resume();
